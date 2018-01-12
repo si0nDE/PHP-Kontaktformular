@@ -2,22 +2,22 @@
 
 return [
     'subject' => [
-        'prefix' => '[Contact Form]'
+        'prefix' => '[Kontaktformular]'
     ],
     'emails' => [
         'to'   => '',
         'from' => ''
     ],
     'messages' => [
-        'error'   => 'There was an error sending, please try again later.',
-        'success' => 'Your message has been sent successfully.'
+        'error'   => 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.',
+        'success' => 'Ihre Nachricht wurde erfolgreich gesendet.'
     ],
     'fields' => [
         'name'     => 'Name',
-        'email'    => 'Email',
-        'phone'    => 'Phone',
-        'subject'  => 'Subject',
-        'message'  => 'Message',
-        'btn-send' => 'Send'
+        'email'    => 'E-Mail-Adresse',
+        'phone'    => 'Telefon',
+        'subject'  => 'Betreff',
+        'message'  => 'Nachricht',
+        'btn-send' => 'Senden'
     ]
 ];
