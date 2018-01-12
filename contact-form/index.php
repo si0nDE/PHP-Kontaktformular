@@ -117,11 +117,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <textarea class="form-control" rows="3" id="form-message" name="form-message" placeholder="<?php echo $config->get('fields.message'); ?>" required></textarea>
                 </div>
             </div>
-            <div class="form-group">
+			
+			<!-- coinhive Captcha -->
+			<div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <script src="https://authedmine.com/lib/captcha.min.js" async></script>
+					<div class="coinhive-captcha" data-hashes="<?php echo $config->get('coinhive.data-hashes'); ?>" data-key="<?php echo $config->get('coinhive.data-key'); ?>" data-whitelabel="<?php echo $config->get('coinhive.data-whitelabel'); ?>" data-disable-elements="button[type=submit]">
+						<em>Captcha wird geladen...<br>
+						Wenn es nicht geladen wird, deaktivieren Sie bitte Adblock!</em>
+					</div>
+                </div>
+            </div>
+			<div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
                     <button type="submit" class="btn btn-default"><?php echo $config->get('fields.btn-send'); ?></button>
                 </div>
             </div>
+			
+			<!-- Google reCaptcha -->
+			<div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <script src='https://www.google.com/recaptcha/api.js'></script>
+					<div class="g-recaptcha" data-sitekey="<?php echo $config->get('recaptcha.data-sitekey'); ?>" data-callback="enableBtn"></div>
+                </div>
+            </div>
+			<div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+					<input type="submit" class="btn btn-default" value="Senden" id="button1"></input>
+				</div>
+            </div>
+			<script>
+				document.getElementById("button1").disabled = true;
+				function enableBtn(){
+					document.getElementById("button1").disabled = false;
+				}
+			</script>
+            
         </form>
     </div>
     <?php endif; ?>
