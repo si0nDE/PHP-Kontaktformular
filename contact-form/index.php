@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?><!DOCTYPE html>
 <html>
 <head>
-    <title>Simple PHP Contact Form</title>
+    <title>Einfaches PHP-Kontaktformular</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link href="./public/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -70,8 +70,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="jumbotron">
         <div class="container">
-            <h1>Simple PHP Contact Form</h1>
-            <p>A Simple Contact Form developed in PHP with HTML5 Form validation. Has a fallback in <strike>jQuery</strike> pure JavaScript for browsers that do not support HTML5 form validation.</p>
+            <h1>Einfaches PHP-Kontaktformular</h1>
+            <p>Ein einfaches Kontaktformular, das in PHP mit HTML5 Form validation entwickelt wurde. Das Kontaktformular kann für Browser, die die HTML5-Formularüberprüfung nicht unterstützen, auf JavaScript zurückgreifen.</p>
         </div>
     </div>
     <?php if(!empty($emailSent)): ?>
