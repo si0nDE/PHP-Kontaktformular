@@ -15,7 +15,7 @@ Schauen Sie sich meine Demo [hier](https://simonfieber.it/demo/kontaktformular/)
 
 ## Download ##
 
-Sie können die neueste Version [hier](https://github.com/si0nDE/PHP-Kontaktformular/archive/master.zip) herunterladen.
+Sie können die neueste Version oder alle Releases [hier] herunterladen (https://github.com/si0nDE/PHP-Kontaktformular/releases).
 
 ## Systemvoraussetzungen ##
 * PHP >=5.4
