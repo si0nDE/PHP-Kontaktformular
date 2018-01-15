@@ -1,70 +1,65 @@
-# Simple PHP Contact Form
+Einfaches PHP-Kontaktformular
+=============================
 
-A Simple Contact Form developed in PHP with HTML5 Form validation. Has a fallback in JavaScript for browsers that do not support HTML5 form validation.
+Ein einfaches Kontaktformular, das in PHP mit HTML5 Form validation entwickelt wurde. Das Kontaktformular kann für Browser, die die HTML5-Formularüberprüfung nicht unterstützen, auf JavaScript zurückgreifen.
 
-## Containerized with Alpine based container
+## Alpine basierte Container ##
 
-Using techniques from https://github.com/hardware/rainloop
+Mit Techniken von https://github.com/hardware/rainloop
 
-The container adds ssmtp so you can set up a working config in /etc/ssmtp/
-for the outgoing mail.
+Der Container fügt ssmtp hinzu, sodass Sie eine funktionierende Konfiguration in /etc/ssmtp/ für die ausgehende Mail einrichten können.
 
-## Demo
+## Demo ##
 
-View [demo here](http://www.pinceladasdaweb.com.br/blog/uploads/contact-form/).
+Schauen Sie sich meine Demo [hier](https://simonfieber.it/demo/kontaktformular/) an.
 
-## Download
+## Download ##
 
-You can download the latest version or checkout all the releases [here](https://github.com/pinceladasdaweb/Simple-PHP-Contact-Form/releases).
+Sie können die neueste Version [hier](https://github.com/si0nDE/PHP-Kontaktformular/archive/master.zip) herunterladen.
 
-## Requirements
-
+## Systemvoraussetzungen ##
 * PHP >=5.4
 
-## How to use?
+## Installation ##
 
-Open the config.php [`config.php`](contact-form/config/config.php) file and fill with your informations.
+Öffnen Sie die Datei [`config.php`](contact-form/config/config.php) und tragen Sie Ihre Informationen in die Felder ein.
 
 ```php
 <?php
 
 return [
     'subject' => [
-        'prefix' => '[Contact Form]'
+		'prefix' => '[Kontaktformular]'
     ],
     'emails' => [
-        'to'   => '', // Email to receive emails via the form.
-        'from' => '' // A valid email where the domain should be the same when the form is hosted.
+		'to'   => 'REPLACE_ME',
+		'from' => 'REPLACE_ME'
     ],
     'messages' => [
-        'error'   => 'There was an error sending, please try again later.',
-        'success' => 'Your message has been sent successfully.'
+		'error'   => 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.',
+		'success' => 'Ihre Nachricht wurde erfolgreich gesendet.'
     ],
     'fields' => [
-        'name'     => 'Name',
-        'email'    => 'Email',
-        'phone'    => 'Phone',
-        'subject'  => 'Subject',
-        'message'  => 'Message',
-        'btn-send' => 'Send'
-    ]
+		'name'     => 'Name',
+		'email'    => 'E-Mail-Adresse',
+		'phone'    => 'Telefon',
+		'subject'  => 'Betreff',
+		'message'  => 'Nachricht',
+		'btn-send' => 'Senden'
+    ],
+	'coinhive' => [
+		'data-key'   => 'Dj5PVUOom6w00NhLZPfsWlZlmzKhdT1H',	/* Site Key (Public) von https://coinhive.com */
+		'data-hashes' => '1024',							/* Anzahl der Hashes, die vom Mining-Pool akzeptiert werden müssen. Das Ziel sollte ein Vielfaches von 256 sein. */
+		'data-whitelabel' => 'false'						/* Coinhive-Logo und "What is this?"-Link ausblenden  */
+    ],
+	'recaptcha' => [
+		'data-sitekey'   => 'REPLACE_ME',					/* Websiteschlüssel von https://www.google.com/recaptcha/ */
+    ],
 ];
 ```
 
-## Browser Support
+## Browserunterstützung ##
 
 ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari_48x48.png)
 --- | --- | --- | --- | --- |
-IE 9+ ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
-
-## Contributing
-
-Check [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
-
-## History
-
-Check [Releases](https://github.com/pinceladasdaweb/Simple-PHP-Contact-Form/releases) for detailed changelog.
-
-## License
-
-[MIT](LICENSE)
+IE 9+ ✔ | Aktuell ✔ | Aktuell ✔ | Aktuell ✔ | Aktuell ✔ |
