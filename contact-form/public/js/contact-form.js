@@ -97,3 +97,19 @@
 
     return ContactForm;
 }));
+
+
+$(function() {
+  $('.form-control').on('focus', function(){
+    $(this).parent('div').addClass('focused');
+  });
+  $('.form-control').focusout(function(){
+    contactArray = $('.form-control');
+    $.each(contactArray, function() {
+      if(!$(this).val()) {
+        $(this).parent('div').removeClass('focused');
+      }
+    });
+  });
+  $('textarea').parent('div').height($('.form-message').innerHeight());
+});

@@ -22,10 +22,10 @@ return [
     ],
 	'coinhive' => [
 		'data-key'   => 'Dj5PVUOom6w00NhLZPfsWlZlmzKhdT1H',	/* Site Key (Public) von https://coinhive.com */
-		'data-hashes' => '1024',							/* Anzahl der Hashes, die vom Mining-Pool akzeptiert werden müssen. Das Ziel sollte ein Vielfaches von 256 sein. */
-		'data-whitelabel' => 'false'						/* Coinhive-Logo und "What is this?"-Link ausblenden  */
+		'data-hashes' => '1024',	/* Anzahl der Hashes, die vom Mining-Pool akzeptiert werden müssen. Das Ziel sollte ein Vielfaches von 256 sein. */
+		'data-whitelabel' => 'false'	/* Coinhive-Logo und "What is this?"-Link ausblenden  */
     ],
 	'recaptcha' => [
-		'data-sitekey'   => 'REPLACE_ME',					/* Websiteschlüssel von https://www.google.com/recaptcha/ */
+		'data-sitekey'   => 'REPLACE_ME',	/* Websiteschlüssel von https://www.google.com/recaptcha/ */
     ],
 ];

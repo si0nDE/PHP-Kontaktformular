@@ -66,6 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link href="./public/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="./public/css/custom.css" rel="stylesheet" media="screen">
+    <script src="./public/js/jquery.min.js"></script>
 </head>
 <body>
     <div class="jumbotron">
@@ -88,33 +90,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="col-md-6 col-md-offset-3">
         <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" enctype="application/x-www-form-urlencoded" id="contact-form" class="form-horizontal" method="post">
             <div class="form-group">
-                <label for="form-name" class="col-lg-2 control-label"><?php echo $config->get('fields.name'); ?></label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="form-name" name="form-name" placeholder="<?php echo $config->get('fields.name'); ?>" required>
+                <div class="col-lg-10 box">
+                    <input type="text" class="form-control box-input" id="form-name" name="form-name" required>
+					<label for="form-name" class="box-label"><?php echo $config->get('fields.name'); ?></label>
                 </div>
             </div>
             <div class="form-group">
-                <label for="form-email" class="col-lg-2 control-label"><?php echo $config->get('fields.email'); ?></label>
-                <div class="col-lg-10">
-                    <input type="email" class="form-control" id="form-email" name="form-email" placeholder="<?php echo $config->get('fields.email'); ?>" required>
+                <div class="col-lg-10 box">
+                    <input type="email" class="form-control box-input" id="form-email" name="form-email" required>
+					<label for="form-email" class="box-label"><?php echo $config->get('fields.email'); ?></label>
                 </div>
             </div>
             <div class="form-group">
-                <label for="form-phone" class="col-lg-2 control-label"><?php echo $config->get('fields.phone'); ?></label>
-                <div class="col-lg-10">
-                    <input type="tel" class="form-control" id="form-phone" name="form-phone" placeholder="<?php echo $config->get('fields.phone'); ?>">
+                <div class="col-lg-10 box">
+                    <input type="tel" class="form-control box-input" id="form-phone" name="form-phone">
+					<label for="form-phone" class="box-label"><?php echo $config->get('fields.phone'); ?></label>
                 </div>
             </div>
             <div class="form-group">
-                <label for="form-subject" class="col-lg-2 control-label"><?php echo $config->get('fields.subject'); ?></label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="form-subject" name="form-subject" placeholder="<?php echo $config->get('fields.subject'); ?>" required>
+                <div class="col-lg-10 box">
+                    <input type="text" class="form-control box-input" id="form-subject" name="form-subject" required>
+					<label for="form-subject" class="box-label"><?php echo $config->get('fields.subject'); ?></label>
                 </div>
             </div>
             <div class="form-group">
-                <label for="form-message" class="col-lg-2 control-label"><?php echo $config->get('fields.message'); ?></label>
-                <div class="col-lg-10">
-                    <textarea class="form-control" rows="3" id="form-message" name="form-message" placeholder="<?php echo $config->get('fields.message'); ?>" required></textarea>
+                <div class="col-lg-10 box">
+                    <textarea class="form-control box-input form-message" rows="5" id="form-message" name="form-message" resize="false" required></textarea>
+					<label for="form-message" class="box-label"><?php echo $config->get('fields.message'); ?></label>
                 </div>
             </div>
 			
@@ -125,13 +127,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				if (check_mobi($_SERVER['HTTP_USER_AGENT'])) {
 					echo "
 						<div class='form-group'>
-							<div class='col-lg-offset-2 col-lg-10'>
+							<div class='captcha'>
 								<script src='https://www.google.com/recaptcha/api.js'></script>
 								<div class='g-recaptcha' data-sitekey='" . $config->get('recaptcha.data-sitekey') . "' data-callback='enableBtn'></div>
 							</div>
 						</div>
 						<div class='form-group'>
-							<div class='col-lg-offset-2 col-lg-10'>
+							<div>
 								<input type='submit' class='btn btn-default' value='Senden' id='button1'></input>
 							</div>
 						</div>
@@ -144,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				} else {
 					echo "
 						<div class='form-group'>
-							<div class='col-lg-offset-2 col-lg-10'>
+							<div class='captcha'>
 								<script src='https://authedmine.com/lib/captcha.min.js' async></script>
 								<div class='coinhive-captcha' data-hashes='" . $config->get('coinhive.data-hashes') . "' data-key='" . $config->get('coinhive.data-key') . "' data-whitelabel='" . $config->get('coinhive.data-whitelabel') . "' data-disable-elements='button[type=submit]'>
 
@@ -155,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 						</div>
 
 						<div class='form-group'>
-							<div class='col-lg-offset-2 col-lg-10'>
+							<div>
 								<button type='submit' class='btn btn-default'>" . $config->get('fields.btn-send') . "</button>
 							</div>
 						</div>"; 
