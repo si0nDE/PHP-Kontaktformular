@@ -60,6 +60,7 @@
 }
 
 .focused label {
+	color: #8c8c8c;
 	-webkit-transform:scale(.7,.7);
 	-moz-transform:scale(.7,.7);
 	transform:scale(.7,.7);
